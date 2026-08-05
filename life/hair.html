@@ -3,27 +3,676 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <title>Hair — Aaron's Life Guide</title>
+  <meta name="description" content="Aaron's personal 4C hair-care routine, products, and wash calendar.">
+  <meta name="color-scheme" content="light">
+  <title>Aaron's 4C Hair-Care Reference</title>
   <style>
-    :root { color-scheme: dark; --ink:#f5efe6; --muted:#b9afa2; --accent:#d5a766; }
-    * { box-sizing:border-box; }
-    body { margin:0; min-height:100svh; display:grid; place-items:center; padding:24px; background:radial-gradient(circle at 15% 15%,#31291f 0,transparent 42%),#12110f; color:var(--ink); font:16px/1.6 Inter,ui-sans-serif,system-ui,sans-serif; }
-    main { width:min(680px,100%); padding:clamp(28px,7vw,72px); border:1px solid #ffffff1f; border-radius:28px; background:#ffffff08; box-shadow:0 24px 90px #0008; }
-    nav { display:flex; gap:18px; flex-wrap:wrap; }
-    a { color:var(--ink); text-underline-offset:5px; }
-    a:focus-visible { outline:2px solid var(--accent); outline-offset:5px; border-radius:3px; }
-    p.eyebrow { margin-top:72px; color:var(--accent); text-transform:uppercase; letter-spacing:.16em; font-size:.74rem; font-weight:750; }
-    h1 { margin:.2em 0; font:clamp(3rem,12vw,6.5rem)/.9 Georgia,serif; letter-spacing:-.055em; }
-    p.copy { max-width:42ch; color:var(--muted); font-size:clamp(1rem,2.4vw,1.2rem); }
+    :root {
+      --ink: #241b16;
+      --muted: #6f5d52;
+      --paper: #fffaf4;
+      --surface: #ffffff;
+      --line: #e7d8ca;
+      --brown: #72472f;
+      --brown-dark: #4d2c1e;
+      --honey: #e3a93d;
+      --honey-soft: #fff0ca;
+      --shadow: 0 14px 40px rgb(84 48 25 / 8%);
+      --radius: 1.25rem;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      font-synthesis: none;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top right, rgb(227 169 61 / 15%), transparent 26rem),
+        var(--paper);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 20;
+      padding: .65rem 1rem;
+      border-radius: .5rem;
+      color: white;
+      background: var(--brown-dark);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .wrap {
+      width: min(72rem, calc(100% - 2rem));
+      margin-inline: auto;
+    }
+
+    .hero {
+      padding: clamp(3.5rem, 8vw, 7rem) 0 2.5rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: var(--brown);
+      font-size: .9rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: .2em;
+    }
+
+    .eyebrow {
+      margin: 0 0 .75rem;
+      color: var(--brown);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.1;
+    }
+
+    h1 {
+      max-width: 13ch;
+      margin: 0;
+      font-size: clamp(2.7rem, 7vw, 5.6rem);
+      letter-spacing: -.045em;
+    }
+
+    .hero-copy {
+      max-width: 42rem;
+      margin: 1.25rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .page-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      overflow-x: auto;
+      border-block: 1px solid var(--line);
+      background: rgb(255 250 244 / 92%);
+      backdrop-filter: blur(14px);
+    }
+
+    .page-nav ul {
+      display: flex;
+      gap: .35rem;
+      width: min(72rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: .65rem 0;
+      list-style: none;
+    }
+
+    .page-nav a {
+      display: block;
+      white-space: nowrap;
+      padding: .55rem .8rem;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .page-nav a:hover,
+    .page-nav a:focus-visible {
+      color: var(--brown-dark);
+      background: var(--honey-soft);
+      outline: none;
+    }
+
+    main {
+      padding-bottom: 5rem;
+    }
+
+    .content-section {
+      padding-top: clamp(3.5rem, 7vw, 6rem);
+      scroll-margin-top: 4rem;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(15rem, 31rem);
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 1.75rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      letter-spacing: -.025em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .products-grid,
+    .wash-choice-grid,
+    .tips-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .wash-choice,
+    .product-card,
+    .routine,
+    .calendar,
+    .tip-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .wash-choice h3,
+    .product-card h3,
+    .tip-card h3 {
+      margin: 0 0 .55rem;
+      font-size: 1.25rem;
+    }
+
+    .wash-choice p,
+    .product-card p,
+    .tip-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-card {
+      padding: 1.25rem;
+    }
+
+    .product-card .label {
+      display: block;
+      margin-bottom: .35rem;
+      color: var(--brown);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .wash-choice-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-bottom: 1rem;
+    }
+
+    .wash-choice {
+      padding: 1.25rem;
+    }
+
+    .wash-choice.first {
+      border-color: #edcf83;
+      background: var(--honey-soft);
+    }
+
+    .routine {
+      overflow: hidden;
+    }
+
+    .routine-header {
+      padding: 1.4rem 1.4rem 1.2rem;
+      color: white;
+      background: var(--brown-dark);
+    }
+
+    .routine-header .when {
+      display: block;
+      margin-bottom: .3rem;
+      font-size: .75rem;
+      font-weight: 850;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .85;
+    }
+
+    .routine-header h3 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    .steps {
+      margin: 0;
+      padding: 1.25rem 1.35rem 1.35rem 3.4rem;
+    }
+
+    .steps li {
+      padding: .15rem 0 .9rem .35rem;
+    }
+
+    .steps li:last-child {
+      padding-bottom: 0;
+    }
+
+    .steps li::marker {
+      color: var(--brown);
+      font-weight: 800;
+    }
+
+    .steps strong {
+      color: var(--brown-dark);
+    }
+
+    .tips-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tip-card {
+      padding: 1.25rem;
+    }
+
+    .calendar {
+      overflow: hidden;
+    }
+
+    .calendar-header {
+      display: flex;
+      gap: 1rem;
+      align-items: end;
+      justify-content: space-between;
+      padding: 1.3rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .calendar-header h3 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .calendar-header p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+
+    .weekday {
+      padding: .7rem .35rem;
+      color: var(--muted);
+      background: #fffaf4;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .day {
+      min-height: 7.25rem;
+      padding: .65rem;
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      background: white;
+    }
+
+    .day:nth-child(7n) {
+      border-right: 0;
+    }
+
+    .day.empty {
+      background: #fcf7f1;
+    }
+
+    .day.sunday {
+      background: #fff9eb;
+    }
+
+    .day.today {
+      position: relative;
+      z-index: 1;
+      outline: 3px solid var(--brown);
+      outline-offset: -3px;
+    }
+
+    .day-number {
+      display: block;
+      font-size: .9rem;
+      font-variant-numeric: tabular-nums;
+      font-weight: 800;
+    }
+
+    .wash-label {
+      display: block;
+      width: fit-content;
+      margin-top: .65rem;
+      padding: .25rem .45rem;
+      border-radius: .45rem;
+      color: white;
+      background: var(--brown);
+      font-size: clamp(.58rem, 1vw, .72rem);
+      font-weight: 850;
+      line-height: 1.25;
+    }
+
+    .wash-label.deep {
+      color: var(--ink);
+      background: var(--honey);
+    }
+
+    @media (max-width: 800px) {
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: .75rem;
+      }
+
+      .tips-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap {
+        width: min(100% - 1.25rem, 72rem);
+      }
+
+      .hero {
+        padding-top: 2.75rem;
+      }
+
+      .products-grid,
+      .wash-choice-grid,
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .calendar-header {
+        display: block;
+      }
+
+      .calendar-header p {
+        margin-top: .3rem;
+      }
+
+      .weekday {
+        padding-inline: .15rem;
+        font-size: .62rem;
+      }
+
+      .day {
+        min-height: 5.4rem;
+        padding: .4rem;
+      }
+
+      .wash-label {
+        margin-top: .45rem;
+        padding: .2rem .3rem;
+      }
+    }
+
+    @media print {
+      :root {
+        --paper: white;
+        --shadow: none;
+      }
+
+      .page-nav,
+      .skip-link {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 1rem;
+      }
+
+      .content-section {
+        padding-top: 2rem;
+      }
+
+      .wash-choice,
+      .product-card,
+      .routine,
+      .calendar,
+      .tip-card {
+        break-inside: avoid;
+      }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <nav aria-label="Breadcrumbs"><a href="./">← Life</a><a href="../">Aaron's site</a></nav>
-    <p class="eyebrow">Guide in development</p>
-    <h1>Hair</h1>
-    <p class="copy">Care, cuts, styling, and a routine that works will live here.</p>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="hero wrap">
+    <a class="back-link" href="./index.html">← Back to Life</a>
+    <p class="eyebrow">Personal reference</p>
+    <h1>Aaron's 4C hair routine</h1>
+    <p class="hero-copy">The products, schedule, and steps for every wash day.</p>
+  </header>
+
+  <nav class="page-nav" aria-label="Page sections">
+    <ul>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#routine">Routine</a></li>
+      <li><a href="#care">Care basics</a></li>
+      <li><a href="#calendar">Calendar</a></li>
+    </ul>
+  </nav>
+
+  <main id="main" class="wrap">
+    <section id="products" class="content-section" aria-labelledby="products-title">
+      <div class="section-heading">
+        <h2 id="products-title">Products</h2>
+        <p>The six products used across the normal and clarifying wash-day routines.</p>
+      </div>
+      <div class="products-grid">
+        <article class="product-card">
+          <span class="label">Normal shampoo</span>
+          <h3>SheaMoisture</h3>
+          <p>Manuka Honey &amp; Mafura Oil Intensive Hydration Shampoo</p>
+        </article>
+        <article class="product-card">
+          <span class="label">Rinse-out conditioner</span>
+          <h3>SheaMoisture</h3>
+          <p>Manuka Honey &amp; Mafura Oil Intensive Hydration Conditioner</p>
+        </article>
+        <article class="product-card">
+          <span class="label">Clarifying shampoo</span>
+          <h3>Locssentials</h3>
+          <p>Clarifying Shampoo with Peppermint and Tea Tree Oils</p>
+        </article>
+        <article class="product-card">
+          <span class="label">Deep conditioner</span>
+          <h3>SheaMoisture</h3>
+          <p>Manuka Honey &amp; Mafura Oil Intensive Hydration Masque</p>
+        </article>
+        <article class="product-card">
+          <span class="label">Leave-in conditioner</span>
+          <h3>SheaMoisture</h3>
+          <p>100% Virgin Coconut Oil Daily Hydration Leave-In Treatment</p>
+        </article>
+        <article class="product-card">
+          <span class="label">Oil sealant</span>
+          <h3>Jojoba oil</h3>
+          <p>Used lightly after leave-in conditioner to help seal in moisture.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="routine" class="content-section" aria-labelledby="routine-title">
+      <div class="section-heading">
+        <h2 id="routine-title">Sunday wash routine</h2>
+        <p>Choose the two wash products for the day, then follow the same routine.</p>
+      </div>
+      <div class="wash-choice-grid">
+        <article class="wash-choice first">
+          <h3>First Sunday of the month</h3>
+          <p><strong>Cleanse:</strong> Locssentials clarifying shampoo<br><strong>Condition:</strong> SheaMoisture intensive hydration masque</p>
+        </article>
+        <article class="wash-choice">
+          <h3>Every other Sunday</h3>
+          <p><strong>Cleanse:</strong> SheaMoisture intensive hydration shampoo<br><strong>Condition:</strong> SheaMoisture intensive hydration conditioner</p>
+        </article>
+      </div>
+      <article class="routine">
+        <header class="routine-header">
+          <span class="when">Same steps every week</span>
+          <h3>Wash day</h3>
+        </header>
+        <ol class="steps">
+          <li><strong>Wet.</strong> Thoroughly wet the scalp and hair with lukewarm water.</li>
+          <li><strong>Cleanse.</strong> Apply today's shampoo mainly to the scalp. Massage gently with finger pads—not nails—then work the lather through the hair.</li>
+          <li><strong>Rinse.</strong> Rinse thoroughly. Shampoo a second time only when there is clear buildup or the scalp still feels dirty.</li>
+          <li><strong>Condition.</strong> Coat the hair evenly with today's conditioner and follow the time on its label. If detangling is needed, do it gently with your fingers while the conditioner provides slip.</li>
+          <li><strong>Rinse.</strong> Rinse the conditioner out thoroughly.</li>
+          <li><strong>Leave in.</strong> On damp—not dripping—hair, apply SheaMoisture 100% Virgin Coconut Oil Daily Hydration Leave-In Treatment.</li>
+          <li><strong>Seal.</strong> Smooth a small amount of jojoba oil over the hair.</li>
+          <li><strong>Dry.</strong> Blot with a cotton T-shirt or microfiber towel; do not rub. Air-dry, or use low to moderate heat, until the hair and scalp are fully dry.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section id="care" class="content-section" aria-labelledby="care-title">
+      <div class="section-heading">
+        <h2 id="care-title">Care basics</h2>
+        <p>The two things to remember outside wash day.</p>
+      </div>
+      <div class="tips-grid">
+        <article class="tip-card">
+          <h3>At night</h3>
+          <p>Use a satin or silk bonnet, scarf, or pillowcase. Do not cover or sleep on soaking-wet hair.</p>
+        </article>
+        <article class="tip-card">
+          <h3>Scalp warning signs</h3>
+          <p>For persistent itching, pain, inflammation, sores, unusual shedding, or sudden breakage, stop irritating products and see a dermatologist.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="calendar" class="content-section" aria-labelledby="calendar-title">
+      <div class="section-heading">
+        <h2 id="calendar-title">Wash calendar</h2>
+        <p>The first Sunday is always clarify + deep condition. Every other Sunday is a normal wash.</p>
+      </div>
+      <article class="calendar" aria-labelledby="current-month">
+        <header class="calendar-header">
+          <h3 id="current-month"></h3>
+          <p id="today"></p>
+        </header>
+        <div class="calendar-grid" id="calendar-grid" aria-label="Current month wash calendar">
+          <div class="weekday">Sun</div>
+          <div class="weekday">Mon</div>
+          <div class="weekday">Tue</div>
+          <div class="weekday">Wed</div>
+          <div class="weekday">Thu</div>
+          <div class="weekday">Fri</div>
+          <div class="weekday">Sat</div>
+        </div>
+        <noscript>This calendar requires JavaScript to show the current month.</noscript>
+      </article>
+    </section>
   </main>
+
+  <script>
+    (() => {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = now.getMonth();
+      const firstWeekday = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const firstSunday = ((7 - firstWeekday) % 7) + 1;
+      const monthName = new Intl.DateTimeFormat(undefined, {
+        month: "long",
+        year: "numeric"
+      }).format(now);
+      const todayText = new Intl.DateTimeFormat(undefined, {
+        weekday: "long",
+        month: "long",
+        day: "numeric"
+      }).format(now);
+
+      document.querySelector("#current-month").textContent = monthName;
+      document.querySelector("#today").textContent = `Today: ${todayText}`;
+
+      const grid = document.querySelector("#calendar-grid");
+
+      for (let index = 0; index < firstWeekday; index += 1) {
+        const empty = document.createElement("div");
+        empty.className = "day empty";
+        empty.setAttribute("aria-hidden", "true");
+        grid.append(empty);
+      }
+
+      for (let date = 1; date <= daysInMonth; date += 1) {
+        const day = document.createElement("div");
+        const dayOfWeek = new Date(year, month, date).getDay();
+        const isToday = date === now.getDate();
+        const isSunday = dayOfWeek === 0;
+        const isClarifyingDay = date === firstSunday;
+
+        day.className = "day";
+        if (isSunday) day.classList.add("sunday");
+        if (isToday) {
+          day.classList.add("today");
+          day.setAttribute("aria-current", "date");
+        }
+
+        const number = document.createElement("time");
+        number.className = "day-number";
+        number.dateTime = `${year}-${String(month + 1).padStart(2, "0")}-${String(date).padStart(2, "0")}`;
+        number.textContent = String(date);
+        day.append(number);
+
+        if (isSunday) {
+          const label = document.createElement("span");
+          label.className = isClarifyingDay ? "wash-label deep" : "wash-label";
+          label.textContent = isClarifyingDay ? "Clarify" : "Normal";
+          day.setAttribute("aria-label", `${monthName} ${date}: ${isClarifyingDay ? "clarify and deep condition" : "normal wash"}`);
+          day.append(label);
+        }
+
+        grid.append(day);
+      }
+
+      const usedCells = firstWeekday + daysInMonth;
+      const trailingCells = (7 - (usedCells % 7)) % 7;
+
+      for (let index = 0; index < trailingCells; index += 1) {
+        const empty = document.createElement("div");
+        empty.className = "day empty";
+        empty.setAttribute("aria-hidden", "true");
+        grid.append(empty);
+      }
+    })();
+  </script>
 </body>
 </html>
